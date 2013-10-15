@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Assignment3
 {
@@ -18,9 +19,15 @@ namespace Assignment3
 
         private void Database_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the '_std_12002076DataSet.tblClient' table. You can move, or remove it, as needed.
-            
+            string dbConn = Properties.Resources.sqlConn;
+            string viewClients = @"SELECT * FROM tblCLient";
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(viewClients, dbConn);
+            DataSet dataSet = new DataSet();
+            sqlDataAdapter.Fill(dataSet);
 
+            gridClient.DataSource = dataSet.Tables[0];
+
+            
         }
     }
 }

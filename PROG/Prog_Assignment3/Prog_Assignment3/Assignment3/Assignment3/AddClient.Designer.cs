@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.masktxtIDNum = new System.Windows.Forms.MaskedTextBox();
-            this.masktxtCellNumber = new System.Windows.Forms.MaskedTextBox();
             this.lblCellNumber = new System.Windows.Forms.Label();
             this.btnAddClient = new System.Windows.Forms.Button();
             this.masktxtSurname = new System.Windows.Forms.MaskedTextBox();
@@ -41,6 +40,8 @@
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblSurname = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.txtCellNumber = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // masktxtIDNum
@@ -50,14 +51,6 @@
             this.masktxtIDNum.Name = "masktxtIDNum";
             this.masktxtIDNum.Size = new System.Drawing.Size(100, 20);
             this.masktxtIDNum.TabIndex = 41;
-            // 
-            // masktxtCellNumber
-            // 
-            this.masktxtCellNumber.Location = new System.Drawing.Point(106, 190);
-            this.masktxtCellNumber.Mask = "(999) 000-0000";
-            this.masktxtCellNumber.Name = "masktxtCellNumber";
-            this.masktxtCellNumber.Size = new System.Drawing.Size(100, 20);
-            this.masktxtCellNumber.TabIndex = 40;
             // 
             // lblCellNumber
             // 
@@ -70,12 +63,13 @@
             // 
             // btnAddClient
             // 
-            this.btnAddClient.Location = new System.Drawing.Point(91, 234);
+            this.btnAddClient.Location = new System.Drawing.Point(131, 238);
             this.btnAddClient.Name = "btnAddClient";
             this.btnAddClient.Size = new System.Drawing.Size(75, 23);
             this.btnAddClient.TabIndex = 38;
             this.btnAddClient.Text = "Add";
             this.btnAddClient.UseVisualStyleBackColor = true;
+            this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
             // 
             // masktxtSurname
             // 
@@ -152,13 +146,31 @@
             this.lblName.TabIndex = 29;
             this.lblName.Text = "Firstname:";
             // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(38, 238);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 42;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // txtCellNumber
+            // 
+            this.txtCellNumber.Location = new System.Drawing.Point(106, 189);
+            this.txtCellNumber.Name = "txtCellNumber";
+            this.txtCellNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtCellNumber.TabIndex = 43;
+            // 
             // AddClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(247, 273);
+            this.Controls.Add(this.txtCellNumber);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.masktxtIDNum);
-            this.Controls.Add(this.masktxtCellNumber);
             this.Controls.Add(this.lblCellNumber);
             this.Controls.Add(this.btnAddClient);
             this.Controls.Add(this.masktxtSurname);
@@ -172,6 +184,7 @@
             this.Controls.Add(this.lblName);
             this.Name = "AddClient";
             this.Text = "AddClient";
+            this.Load += new System.EventHandler(this.AddClient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,7 +193,6 @@
         #endregion
 
         private System.Windows.Forms.MaskedTextBox masktxtIDNum;
-        private System.Windows.Forms.MaskedTextBox masktxtCellNumber;
         private System.Windows.Forms.Label lblCellNumber;
         private System.Windows.Forms.Button btnAddClient;
         private System.Windows.Forms.MaskedTextBox masktxtSurname;
@@ -192,5 +204,7 @@
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label lblSurname;
         private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.TextBox txtCellNumber;
     }
 }

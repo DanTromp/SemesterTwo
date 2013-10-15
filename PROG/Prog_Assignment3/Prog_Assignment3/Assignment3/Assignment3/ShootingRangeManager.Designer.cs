@@ -33,13 +33,15 @@
             this.masktxtFirstName = new System.Windows.Forms.MaskedTextBox();
             this.lblFindSurname = new System.Windows.Forms.Label();
             this.lblFindName = new System.Windows.Forms.Label();
-            this.btnAddNew = new System.Windows.Forms.Button();
+            this.btnAddNewGun = new System.Windows.Forms.Button();
             this.btnViewDatabase = new System.Windows.Forms.Button();
+            this.btnAddNewClient = new System.Windows.Forms.Button();
+            this.btnAddButtons = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnFind
             // 
-            this.btnFind.Location = new System.Drawing.Point(19, 109);
+            this.btnFind.Location = new System.Drawing.Point(10, 112);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(75, 23);
             this.btnFind.TabIndex = 32;
@@ -81,19 +83,20 @@
             this.lblFindName.TabIndex = 28;
             this.lblFindName.Text = "FirstName:";
             // 
-            // btnAddNew
+            // btnAddNewGun
             // 
-            this.btnAddNew.Location = new System.Drawing.Point(123, 99);
-            this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(75, 23);
-            this.btnAddNew.TabIndex = 33;
-            this.btnAddNew.Text = "Add New";
-            this.btnAddNew.UseVisualStyleBackColor = true;
-            this.btnAddNew.Visible = false;
+            this.btnAddNewGun.Location = new System.Drawing.Point(2, 83);
+            this.btnAddNewGun.Name = "btnAddNewGun";
+            this.btnAddNewGun.Size = new System.Drawing.Size(83, 23);
+            this.btnAddNewGun.TabIndex = 33;
+            this.btnAddNewGun.Text = "Add New Gun";
+            this.btnAddNewGun.UseVisualStyleBackColor = true;
+            this.btnAddNewGun.Visible = false;
+            this.btnAddNewGun.Click += new System.EventHandler(this.btnAddNewGun_Click);
             // 
             // btnViewDatabase
             // 
-            this.btnViewDatabase.Location = new System.Drawing.Point(100, 109);
+            this.btnViewDatabase.Location = new System.Drawing.Point(100, 112);
             this.btnViewDatabase.Name = "btnViewDatabase";
             this.btnViewDatabase.Size = new System.Drawing.Size(98, 23);
             this.btnViewDatabase.TabIndex = 34;
@@ -101,13 +104,36 @@
             this.btnViewDatabase.UseVisualStyleBackColor = true;
             this.btnViewDatabase.Click += new System.EventHandler(this.btnViewDatabase_Click);
             // 
+            // btnAddNewClient
+            // 
+            this.btnAddNewClient.Location = new System.Drawing.Point(110, 83);
+            this.btnAddNewClient.Name = "btnAddNewClient";
+            this.btnAddNewClient.Size = new System.Drawing.Size(98, 23);
+            this.btnAddNewClient.TabIndex = 35;
+            this.btnAddNewClient.Text = "Add New Client";
+            this.btnAddNewClient.UseVisualStyleBackColor = true;
+            this.btnAddNewClient.Visible = false;
+            this.btnAddNewClient.Click += new System.EventHandler(this.AddNewClient_Click);
+            // 
+            // btnAddButtons
+            // 
+            this.btnAddButtons.Location = new System.Drawing.Point(60, 83);
+            this.btnAddButtons.Name = "btnAddButtons";
+            this.btnAddButtons.Size = new System.Drawing.Size(75, 23);
+            this.btnAddButtons.TabIndex = 36;
+            this.btnAddButtons.Text = "Add";
+            this.btnAddButtons.UseVisualStyleBackColor = true;
+            this.btnAddButtons.Click += new System.EventHandler(this.btnAddButtons_Click);
+            // 
             // ShootingRangeManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(210, 144);
+            this.Controls.Add(this.btnAddButtons);
+            this.Controls.Add(this.btnAddNewClient);
             this.Controls.Add(this.btnViewDatabase);
-            this.Controls.Add(this.btnAddNew);
+            this.Controls.Add(this.btnAddNewGun);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.masktxtSurname);
             this.Controls.Add(this.masktxtFirstName);
@@ -129,8 +155,10 @@
         private System.Windows.Forms.MaskedTextBox masktxtFirstName;
         private System.Windows.Forms.Label lblFindSurname;
         private System.Windows.Forms.Label lblFindName;
-        private System.Windows.Forms.Button btnAddNew;
+        private System.Windows.Forms.Button btnAddNewGun;
         private System.Windows.Forms.Button btnViewDatabase;
+        private System.Windows.Forms.Button btnAddNewClient;
+        private System.Windows.Forms.Button btnAddButtons;
 
 
 

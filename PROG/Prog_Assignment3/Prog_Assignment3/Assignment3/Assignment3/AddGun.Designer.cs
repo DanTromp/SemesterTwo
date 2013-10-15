@@ -39,6 +39,7 @@
             this.lblGunYear = new System.Windows.Forms.Label();
             this.lblGunAmmo = new System.Windows.Forms.Label();
             this.lblGunType = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtGunType
@@ -65,7 +66,7 @@
             // masktxtGunWeight
             // 
             this.masktxtGunWeight.Location = new System.Drawing.Point(121, 133);
-            this.masktxtGunWeight.Mask = "00000";
+            this.masktxtGunWeight.Mask = "00 kgs";
             this.masktxtGunWeight.Name = "masktxtGunWeight";
             this.masktxtGunWeight.Size = new System.Drawing.Size(100, 20);
             this.masktxtGunWeight.TabIndex = 18;
@@ -81,12 +82,13 @@
             // 
             // btnAddGun
             // 
-            this.btnAddGun.Location = new System.Drawing.Point(95, 218);
+            this.btnAddGun.Location = new System.Drawing.Point(146, 224);
             this.btnAddGun.Name = "btnAddGun";
             this.btnAddGun.Size = new System.Drawing.Size(75, 23);
             this.btnAddGun.TabIndex = 16;
             this.btnAddGun.Text = "Add";
             this.btnAddGun.UseVisualStyleBackColor = true;
+            this.btnAddGun.Click += new System.EventHandler(this.btnAddGun_Click);
             // 
             // lblGunColour
             // 
@@ -133,11 +135,22 @@
             this.lblGunType.TabIndex = 11;
             this.lblGunType.Text = "Gun Type:";
             // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(42, 224);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 22;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // AddGun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(259, 273);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtGunType);
             this.Controls.Add(this.txtGunAmmo);
             this.Controls.Add(this.txtGunYear);
@@ -169,5 +182,6 @@
         private System.Windows.Forms.Label lblGunYear;
         private System.Windows.Forms.Label lblGunAmmo;
         private System.Windows.Forms.Label lblGunType;
+        private System.Windows.Forms.Button btnClear;
     }
 }

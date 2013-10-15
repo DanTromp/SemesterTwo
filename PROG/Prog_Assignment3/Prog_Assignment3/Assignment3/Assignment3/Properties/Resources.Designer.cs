@@ -63,9 +63,9 @@ namespace Assignment3.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Data Source=.\sqlexpress;Initial Catalog=Programming;Integrated Security=True.
         /// </summary>
-        internal static string connectionString {
+        internal static string sqlConn {
             get {
-                return ResourceManager.GetString("connectionString", resourceCulture);
+                return ResourceManager.GetString("sqlConn", resourceCulture);
             }
         }
     }
