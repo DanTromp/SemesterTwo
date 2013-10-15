@@ -40,32 +40,34 @@
             this.lblGunAmmo = new System.Windows.Forms.Label();
             this.lblGunType = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.masktxtGunCLient = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // txtGunType
             // 
-            this.txtGunType.Location = new System.Drawing.Point(121, 25);
+            this.txtGunType.Location = new System.Drawing.Point(121, 12);
             this.txtGunType.Name = "txtGunType";
             this.txtGunType.Size = new System.Drawing.Size(100, 20);
             this.txtGunType.TabIndex = 21;
             // 
             // txtGunAmmo
             // 
-            this.txtGunAmmo.Location = new System.Drawing.Point(121, 61);
+            this.txtGunAmmo.Location = new System.Drawing.Point(121, 48);
             this.txtGunAmmo.Name = "txtGunAmmo";
             this.txtGunAmmo.Size = new System.Drawing.Size(100, 20);
             this.txtGunAmmo.TabIndex = 20;
             // 
             // txtGunYear
             // 
-            this.txtGunYear.Location = new System.Drawing.Point(121, 98);
+            this.txtGunYear.Location = new System.Drawing.Point(121, 85);
             this.txtGunYear.Name = "txtGunYear";
             this.txtGunYear.Size = new System.Drawing.Size(100, 20);
             this.txtGunYear.TabIndex = 19;
             // 
             // masktxtGunWeight
             // 
-            this.masktxtGunWeight.Location = new System.Drawing.Point(121, 133);
+            this.masktxtGunWeight.Location = new System.Drawing.Point(121, 120);
             this.masktxtGunWeight.Mask = "00 kgs";
             this.masktxtGunWeight.Name = "masktxtGunWeight";
             this.masktxtGunWeight.Size = new System.Drawing.Size(100, 20);
@@ -74,7 +76,7 @@
             // 
             // masktxtGunColour
             // 
-            this.masktxtGunColour.Location = new System.Drawing.Point(121, 167);
+            this.masktxtGunColour.Location = new System.Drawing.Point(121, 154);
             this.masktxtGunColour.Mask = "LLL???????";
             this.masktxtGunColour.Name = "masktxtGunColour";
             this.masktxtGunColour.Size = new System.Drawing.Size(100, 20);
@@ -93,7 +95,7 @@
             // lblGunColour
             // 
             this.lblGunColour.AutoSize = true;
-            this.lblGunColour.Location = new System.Drawing.Point(25, 175);
+            this.lblGunColour.Location = new System.Drawing.Point(25, 162);
             this.lblGunColour.Name = "lblGunColour";
             this.lblGunColour.Size = new System.Drawing.Size(63, 13);
             this.lblGunColour.TabIndex = 15;
@@ -102,7 +104,7 @@
             // lblGunWeight
             // 
             this.lblGunWeight.AutoSize = true;
-            this.lblGunWeight.Location = new System.Drawing.Point(25, 141);
+            this.lblGunWeight.Location = new System.Drawing.Point(25, 128);
             this.lblGunWeight.Name = "lblGunWeight";
             this.lblGunWeight.Size = new System.Drawing.Size(67, 13);
             this.lblGunWeight.TabIndex = 14;
@@ -111,7 +113,7 @@
             // lblGunYear
             // 
             this.lblGunYear.AutoSize = true;
-            this.lblGunYear.Location = new System.Drawing.Point(25, 106);
+            this.lblGunYear.Location = new System.Drawing.Point(25, 93);
             this.lblGunYear.Name = "lblGunYear";
             this.lblGunYear.Size = new System.Drawing.Size(55, 13);
             this.lblGunYear.TabIndex = 13;
@@ -120,7 +122,7 @@
             // lblGunAmmo
             // 
             this.lblGunAmmo.AutoSize = true;
-            this.lblGunAmmo.Location = new System.Drawing.Point(25, 69);
+            this.lblGunAmmo.Location = new System.Drawing.Point(25, 56);
             this.lblGunAmmo.Name = "lblGunAmmo";
             this.lblGunAmmo.Size = new System.Drawing.Size(62, 13);
             this.lblGunAmmo.TabIndex = 12;
@@ -129,7 +131,7 @@
             // lblGunType
             // 
             this.lblGunType.AutoSize = true;
-            this.lblGunType.Location = new System.Drawing.Point(25, 32);
+            this.lblGunType.Location = new System.Drawing.Point(25, 19);
             this.lblGunType.Name = "lblGunType";
             this.lblGunType.Size = new System.Drawing.Size(57, 13);
             this.lblGunType.TabIndex = 11;
@@ -145,11 +147,30 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(25, 188);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Client ID:";
+            // 
+            // masktxtGunCLient
+            // 
+            this.masktxtGunCLient.Location = new System.Drawing.Point(121, 181);
+            this.masktxtGunCLient.Mask = "000";
+            this.masktxtGunCLient.Name = "masktxtGunCLient";
+            this.masktxtGunCLient.Size = new System.Drawing.Size(100, 20);
+            this.masktxtGunCLient.TabIndex = 24;
+            // 
             // AddGun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(259, 273);
+            this.Controls.Add(this.masktxtGunCLient);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtGunType);
             this.Controls.Add(this.txtGunAmmo);
@@ -183,5 +204,7 @@
         private System.Windows.Forms.Label lblGunAmmo;
         private System.Windows.Forms.Label lblGunType;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox masktxtGunCLient;
     }
 }

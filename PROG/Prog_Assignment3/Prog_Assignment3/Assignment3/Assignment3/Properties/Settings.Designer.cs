@@ -32,5 +32,7 @@ namespace Assignment3.Properties {
                 return ((string)(this["ConnectionString"]));
             }
         }
+
+        public string code { get; set; }
     }
 }

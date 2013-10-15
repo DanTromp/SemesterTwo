@@ -32,7 +32,7 @@ namespace Assignment3
                     SqlConnection dbConn = new SqlConnection(Properties.Resources.sqlConn);
                     dbConn.Open();
 
-                    string gunQuery = "INSERT INTO tblGun(clientID, guntype, gunAmmo, gunYear, gunWeight, gunColour) VALUES ('" + txtGunType.Text + "','" + txtGunAmmo.Text + "', '" + txtGunYear.Text + "','" + masktxtGunWeight.Text + "','" + masktxtGunColour.Text + "')";
+                    string gunQuery = "INSERT INTO tblGun(clientID, guntype, gunAmmo, gunYear, gunWeight, gunColour) VALUES ('" + masktxtGunCLient.Text + "','" + txtGunType.Text + "','" + txtGunAmmo.Text + "', '" + txtGunYear.Text + "','" + masktxtGunWeight.Text + "','" + masktxtGunColour.Text + "')";
                     SqlCommand sqlCmd = new SqlCommand(gunQuery, dbConn);
                     sqlCmd.ExecuteNonQuery();
                     dbConn.Close();

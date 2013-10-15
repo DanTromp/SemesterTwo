@@ -64,11 +64,35 @@ namespace Assignment3
                     reader.Read();
 
                     string dbUser = reader[0].ToString();
-                    string dbPass = reader[1].ToString();              
-
+                    string dbPass = reader[1].ToString();
+                    reader.Close();
                     if (userNames == dbUser && password == dbPass)
                     {
-                        MessageBox.Show("Exists in database");
+                        
+                    string getCodeQuery = @"SELECT clientID FROM tblClient WHERE clientName = '" + masktxtFirstName.Text + "'";
+                    SqlCommand sqlGetCode = new SqlCommand(getCodeQuery, dbConn);
+                    SqlDataReader readers = sqlGetCode.ExecuteReader();
+                    readers.Read();
+
+                    string codeString = readers[0].ToString();
+
+                    Properties.Settings.Default.code = codeString;
+                        
+                       DialogResult dr = MessageBox.Show("Would you like to view your gun record?",
+                      "View Database", MessageBoxButtons.YesNo);
+                       if (dr == DialogResult.Yes)
+                       {
+                           this.Hide();
+                           ViewLoaderScreen viewLoader = new ViewLoaderScreen();
+                           viewLoader.ShowDialog();
+                       }
+                       else if (dr == DialogResult.No)
+                       {
+                           this.Close();
+                       }
+
+                        dbConn.Close();
+                        
                     }
                     else
                     {

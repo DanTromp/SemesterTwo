@@ -61,6 +61,15 @@ namespace Assignment3.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string code {
+            get {
+                return ResourceManager.GetString("code", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data Source=.\sqlexpress;Initial Catalog=Programming;Integrated Security=True.
         /// </summary>
         internal static string sqlConn {

@@ -12,6 +12,7 @@ namespace Assignment3
 {
     public partial class Database : Form
     {
+       
         public Database()
         {
             InitializeComponent();
@@ -19,15 +20,37 @@ namespace Assignment3
 
         private void Database_Load(object sender, EventArgs e)
         {
-            string dbConn = Properties.Resources.sqlConn;
-            string viewClients = @"SELECT * FROM tblCLient";
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(viewClients, dbConn);
-            DataSet dataSet = new DataSet();
-            sqlDataAdapter.Fill(dataSet);
+     
+        }
 
-            gridClient.DataSource = dataSet.Tables[0];
+        private void gridClient_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-            
+        }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+
+            if (comboSelection.SelectedIndex == 0)
+            {
+                string view = @"SELECT * FROM tblClient";
+                string dbConn = Properties.Resources.sqlConn;
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(view, dbConn);
+                DataSet dataSet = new DataSet();
+                sqlDataAdapter.Fill(dataSet);
+
+                gridClient.DataSource = dataSet.Tables[0];
+            }
+            else if (comboSelection.SelectedIndex == 1)
+            {
+                string view = @"SELECT * FROM tblGun";
+                string dbConn = Properties.Resources.sqlConn;
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(view, dbConn);
+                DataSet dataSet = new DataSet();
+                sqlDataAdapter.Fill(dataSet);
+
+                gridClient.DataSource = dataSet.Tables[0];
+            }
         }
     }
 }
