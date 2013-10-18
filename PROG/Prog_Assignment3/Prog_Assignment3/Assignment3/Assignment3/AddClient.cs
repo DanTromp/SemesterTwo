@@ -37,6 +37,11 @@ namespace Assignment3
                 dbConn.Close();
 
                 clearAll();
+
+                MessageBox.Show("Added Successfully");
+                this.Hide();
+                ShootingRangeManager shooter = new ShootingRangeManager();
+                shooter.Show();
             }
             catch (System.Exception ex)
             {

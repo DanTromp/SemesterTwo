@@ -38,7 +38,7 @@ namespace Assignment3
         {
             this.Hide();
             Database dtbase = new Database();
-            dtbase.Show();
+            dtbase.ShowDialog();
         }
 
         private void btnFind_Click(object sender, EventArgs e)
@@ -101,10 +101,9 @@ namespace Assignment3
                     }
                 } 
             }
-            catch (SqlException ex)
+            catch (System.InvalidOperationException ex)
             {
-                 
-                MessageBox.Show("Username or Password not contained in database" + "\n"+ex.Message);
+                MessageBox.Show("Username or Password not contained in database" + "\n" + ex.Message);
                 dbConn.Close();
             }
             

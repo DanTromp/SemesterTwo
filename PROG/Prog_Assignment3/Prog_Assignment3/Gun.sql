@@ -31,7 +31,7 @@ clientID int foreign key references tblClient(clientID),
 gunType varchar (20),
 gunAmmo varchar (20),
 gunYear varchar (10),
-gunWeight int,
+gunWeight varchar (10),
 gunColour varchar (10)
 )
 

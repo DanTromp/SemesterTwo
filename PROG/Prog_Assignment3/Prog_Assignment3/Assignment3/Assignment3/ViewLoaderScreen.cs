@@ -19,6 +19,7 @@ namespace Assignment3
 
         private void ViewLoaderScreen_Load(object sender, EventArgs e)
         {
+            
 
             string view = @"SELECT * FROM tblGun WHERE clientID = '" + Properties.Settings.Default.code + "'";
             string dbConn = Properties.Resources.sqlConn;
