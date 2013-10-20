@@ -17,32 +17,36 @@ namespace Assignment3
             InitializeComponent();
         }
 
+        //Adding the new client to the database
         private void btnAddClient_Click(object sender, EventArgs e)
         {
-            string cFirstname = masktxtName.Text;
-            string cSurname = masktxtSurname.Text;
-            string cAddress = txtAddress.Text;
-            string cEmail = txtEmail.Text;
-            string cIDNum = masktxtIDNum.Text;
-            string cCell = txtCellNumber.Text;
-
             try
             {
+                //Establishing the database connection
                 SqlConnection dbConn = new SqlConnection(Properties.Resources.sqlConn);
                 dbConn.Open();
 
-                string clientQuery = "INSERT INTO tblClient(clientName, clientSurname, clientAddress, clientEmail, clientIDNum, clientCell) VALUES ('" + masktxtName.Text + "','" + masktxtSurname.Text + "', '" + txtAddress.Text + "','" + txtEmail.Text + "','" + masktxtIDNum.Text + "','" + txtCellNumber.Text + "')";
+                //Adding the new client to the database with the appropriate query
+                string clientQuery = @"INSERT INTO tblClient(clientName, clientSurname, clientAddress, clientEmail, clientIDNum, clientCell) 
+                                    VALUES ('" + masktxtName.Text + "','" + masktxtSurname.Text + "', '" + txtAddress.Text + "','" 
+                                               + txtEmail.Text + "','" + masktxtIDNum.Text + "','" + txtCellNumber.Text + "')";
+
+                
                 SqlCommand sqlCmd = new SqlCommand(clientQuery, dbConn);
+
+                //Executing the query
                 sqlCmd.ExecuteNonQuery();
                 dbConn.Close();
 
                 clearAll();
 
+                //If the query executes successfully
                 MessageBox.Show("Added Successfully");
                 this.Hide();
                 ShootingRangeManager shooter = new ShootingRangeManager();
                 shooter.Show();
             }
+                //Appropriate catch for the method errors
             catch (System.Exception ex)
             {
                 MessageBox.Show("ERROR: Client Not Added Because: " + ex.Message);
@@ -54,6 +58,7 @@ namespace Assignment3
             clearAll();
         }
 
+        //Method to clear all the fields
         private void clearAll()
         {
             txtCellNumber.Clear();

@@ -185,6 +185,7 @@
             this.Controls.Add(this.lblGunType);
             this.Name = "AddGun";
             this.Text = "AddGun";
+            this.Load += new System.EventHandler(this.AddGun_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

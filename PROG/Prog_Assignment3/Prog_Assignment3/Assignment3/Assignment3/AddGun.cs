@@ -20,19 +20,16 @@ namespace Assignment3
         private void btnAddGun_Click(object sender, EventArgs e)
         {
             {
-                string gType = txtGunType.Text;
-                string gAmmo = txtGunAmmo.Text;
-                string gYear = txtGunYear.Text;
-                string gWeight = masktxtGunWeight.Text;
-                string gColour = masktxtGunColour.Text;
-                
-
                 try
                 {
                     SqlConnection dbConn = new SqlConnection(Properties.Resources.sqlConn);
                     dbConn.Open();
+                    
+                    //Query to populate the tableGun with the new information
+                    string gunQuery = @"INSERT INTO tblGun(clientID, guntype, gunAmmo, gunYear, gunWeight, gunColour) 
+                                        VALUES ('" + masktxtGunCLient.Text + "','" + txtGunType.Text + "','" + txtGunAmmo.Text + "', '" 
+                                                   + txtGunYear.Text + "','" + masktxtGunWeight.Text + "','" + masktxtGunColour.Text + "')";
 
-                    string gunQuery = "INSERT INTO tblGun(clientID, guntype, gunAmmo, gunYear, gunWeight, gunColour) VALUES ('" + masktxtGunCLient.Text + "','" + txtGunType.Text + "','" + txtGunAmmo.Text + "', '" + txtGunYear.Text + "','" + masktxtGunWeight.Text + "','" + masktxtGunColour.Text + "')";
                     SqlCommand sqlCmd = new SqlCommand(gunQuery, dbConn);
                     sqlCmd.ExecuteNonQuery();
                     dbConn.Close();
@@ -64,6 +61,11 @@ namespace Assignment3
             masktxtGunWeight.Clear();
             masktxtGunColour.Clear();
             
+        }
+
+        private void AddGun_Load(object sender, EventArgs e)
+        {
+
         }
     
     }

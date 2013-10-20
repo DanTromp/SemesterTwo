@@ -37,11 +37,17 @@
             this.btnViewDatabase = new System.Windows.Forms.Button();
             this.btnAddNewClient = new System.Windows.Forms.Button();
             this.btnAddButtons = new System.Windows.Forms.Button();
+            this.mnuEdit = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewGunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitTheAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuEdit.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnFind
             // 
-            this.btnFind.Location = new System.Drawing.Point(10, 112);
+            this.btnFind.Location = new System.Drawing.Point(14, 117);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(75, 23);
             this.btnFind.TabIndex = 32;
@@ -51,7 +57,7 @@
             // 
             // masktxtSurname
             // 
-            this.masktxtSurname.Location = new System.Drawing.Point(81, 57);
+            this.masktxtSurname.Location = new System.Drawing.Point(85, 62);
             this.masktxtSurname.Mask = "LLLL???????";
             this.masktxtSurname.Name = "masktxtSurname";
             this.masktxtSurname.Size = new System.Drawing.Size(100, 20);
@@ -59,7 +65,7 @@
             // 
             // masktxtFirstName
             // 
-            this.masktxtFirstName.Location = new System.Drawing.Point(81, 22);
+            this.masktxtFirstName.Location = new System.Drawing.Point(85, 27);
             this.masktxtFirstName.Mask = "LLLL???????";
             this.masktxtFirstName.Name = "masktxtFirstName";
             this.masktxtFirstName.Size = new System.Drawing.Size(100, 20);
@@ -68,7 +74,7 @@
             // lblFindSurname
             // 
             this.lblFindSurname.AutoSize = true;
-            this.lblFindSurname.Location = new System.Drawing.Point(16, 64);
+            this.lblFindSurname.Location = new System.Drawing.Point(20, 69);
             this.lblFindSurname.Name = "lblFindSurname";
             this.lblFindSurname.Size = new System.Drawing.Size(52, 13);
             this.lblFindSurname.TabIndex = 29;
@@ -77,7 +83,7 @@
             // lblFindName
             // 
             this.lblFindName.AutoSize = true;
-            this.lblFindName.Location = new System.Drawing.Point(16, 29);
+            this.lblFindName.Location = new System.Drawing.Point(20, 34);
             this.lblFindName.Name = "lblFindName";
             this.lblFindName.Size = new System.Drawing.Size(57, 13);
             this.lblFindName.TabIndex = 28;
@@ -85,7 +91,7 @@
             // 
             // btnAddNewGun
             // 
-            this.btnAddNewGun.Location = new System.Drawing.Point(2, 83);
+            this.btnAddNewGun.Location = new System.Drawing.Point(6, 88);
             this.btnAddNewGun.Name = "btnAddNewGun";
             this.btnAddNewGun.Size = new System.Drawing.Size(83, 23);
             this.btnAddNewGun.TabIndex = 33;
@@ -96,7 +102,7 @@
             // 
             // btnViewDatabase
             // 
-            this.btnViewDatabase.Location = new System.Drawing.Point(100, 112);
+            this.btnViewDatabase.Location = new System.Drawing.Point(104, 117);
             this.btnViewDatabase.Name = "btnViewDatabase";
             this.btnViewDatabase.Size = new System.Drawing.Size(98, 23);
             this.btnViewDatabase.TabIndex = 34;
@@ -106,7 +112,7 @@
             // 
             // btnAddNewClient
             // 
-            this.btnAddNewClient.Location = new System.Drawing.Point(110, 83);
+            this.btnAddNewClient.Location = new System.Drawing.Point(114, 88);
             this.btnAddNewClient.Name = "btnAddNewClient";
             this.btnAddNewClient.Size = new System.Drawing.Size(98, 23);
             this.btnAddNewClient.TabIndex = 35;
@@ -117,7 +123,7 @@
             // 
             // btnAddButtons
             // 
-            this.btnAddButtons.Location = new System.Drawing.Point(60, 83);
+            this.btnAddButtons.Location = new System.Drawing.Point(64, 88);
             this.btnAddButtons.Name = "btnAddButtons";
             this.btnAddButtons.Size = new System.Drawing.Size(75, 23);
             this.btnAddButtons.TabIndex = 36;
@@ -125,11 +131,52 @@
             this.btnAddButtons.UseVisualStyleBackColor = true;
             this.btnAddButtons.Click += new System.EventHandler(this.btnAddButtons_Click);
             // 
+            // mnuEdit
+            // 
+            this.mnuEdit.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.mnuEdit.Location = new System.Drawing.Point(0, 0);
+            this.mnuEdit.Name = "mnuEdit";
+            this.mnuEdit.Size = new System.Drawing.Size(219, 24);
+            this.mnuEdit.TabIndex = 37;
+            this.mnuEdit.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewGunToolStripMenuItem,
+            this.addNewClientToolStripMenuItem,
+            this.exitTheAppToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // addNewGunToolStripMenuItem
+            // 
+            this.addNewGunToolStripMenuItem.Name = "addNewGunToolStripMenuItem";
+            this.addNewGunToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.addNewGunToolStripMenuItem.Text = "Add New Gun";
+            this.addNewGunToolStripMenuItem.Click += new System.EventHandler(this.addNewGunToolStripMenuItem_Click);
+            // 
+            // addNewClientToolStripMenuItem
+            // 
+            this.addNewClientToolStripMenuItem.Name = "addNewClientToolStripMenuItem";
+            this.addNewClientToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.addNewClientToolStripMenuItem.Text = "Add New Client";
+            this.addNewClientToolStripMenuItem.Click += new System.EventHandler(this.addNewClientToolStripMenuItem_Click);
+            // 
+            // exitTheAppToolStripMenuItem
+            // 
+            this.exitTheAppToolStripMenuItem.Name = "exitTheAppToolStripMenuItem";
+            this.exitTheAppToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.exitTheAppToolStripMenuItem.Text = "Exit The App";
+            this.exitTheAppToolStripMenuItem.Click += new System.EventHandler(this.exitTheAppToolStripMenuItem_Click);
+            // 
             // ShootingRangeManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(210, 144);
+            this.ClientSize = new System.Drawing.Size(219, 151);
             this.Controls.Add(this.btnAddButtons);
             this.Controls.Add(this.btnAddNewClient);
             this.Controls.Add(this.btnViewDatabase);
@@ -139,10 +186,14 @@
             this.Controls.Add(this.masktxtFirstName);
             this.Controls.Add(this.lblFindSurname);
             this.Controls.Add(this.lblFindName);
+            this.Controls.Add(this.mnuEdit);
+            this.MainMenuStrip = this.mnuEdit;
             this.Name = "ShootingRangeManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Shooting Range Manager";
             this.Load += new System.EventHandler(this.Adding_Load);
+            this.mnuEdit.ResumeLayout(false);
+            this.mnuEdit.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,6 +210,11 @@
         private System.Windows.Forms.Button btnViewDatabase;
         private System.Windows.Forms.Button btnAddNewClient;
         private System.Windows.Forms.Button btnAddButtons;
+        private System.Windows.Forms.MenuStrip mnuEdit;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewGunToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewClientToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitTheAppToolStripMenuItem;
 
 
 
