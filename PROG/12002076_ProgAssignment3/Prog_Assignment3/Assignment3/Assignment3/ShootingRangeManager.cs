@@ -71,6 +71,7 @@ namespace Assignment3
                     string dbUser = reader[0].ToString();
                     string dbPass = reader[1].ToString();
                     reader.Close();
+
                     //Seeing if the user is contained in the database
                     if (userNames == dbUser && password == dbPass)
                     {
